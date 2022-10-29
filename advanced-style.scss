@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Unica+One|Vollkorn');
+
+$ff-ss: 'Unica One';
+$ff-s: 'Vollkorn';
+
+$clr-red: #c31;
+$clr-black: rgba(black, 1);
+$clr-gray: rgba(black, .7);
+
+body {
+    font-size: 1rem;
+    text-align: center;
+    font-family: $ff-s;
+    line-height: 1.4;
+    color: $clr-gray;
+  }
+  
+  h1, h2, h3, h4, h5 {
+    font-family: $ff-ss;
+    text-transform: uppercase;
+    line-height: .9;
+    color: #c31;
+  }
+  
+  h2 {
+    margin-top: 1.2em;
+    margin-bottom: 0;
+  }
+  
+  p {
+    margin-top: .25em;
+  }
+  
+  a {
+    color: $clr-red;
+  }
+  
+  .intro {
+    font-size: 5rem;
+  }
+  
+  
+  blockquote {
+    font-size: 2rem;
+    color: $clr-black;
+  }  
+
+
+  a[data-tool-tip] {
+    position: relative;
+  }
+
+  .decorations {
+    padding: 7em;
+  }
+  
+  .counters {
+    background: lightgray;
+    text-align: left;
+    padding: 5em 8em;
+    margin-top: 7em;
+    
+    counter-reset: counter-name;
+  }
+  
+  .section { 
+    position: relative;
+    counter-increment: section-counter;
+  }
+  
+  .counters ol {
+    list-style: none;
+  }
+  
