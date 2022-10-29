@@ -1,0 +1,64 @@
+@import url("https://fonts.googleapis.com/css?family=Unica+One|Vollkorn");
+body {
+  font-size: 1rem;
+  text-align: center;
+  font-family: "Vollkorn";
+  line-height: 1.4;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Unica One";
+  text-transform: uppercase;
+  line-height: 0.9;
+  color: #c31;
+}
+
+h2 {
+  margin-top: 1.2em;
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0.25em;
+}
+
+a {
+  color: #c31;
+}
+
+.intro {
+  font-size: 5rem;
+}
+
+blockquote {
+  font-size: 2rem;
+  color: black;
+}
+
+a[data-tool-tip] {
+  position: relative;
+}
+
+.decorations {
+  padding: 7em;
+}
+
+.counters {
+  background: lightgray;
+  text-align: left;
+  padding: 5em 8em;
+  margin-top: 7em;
+  counter-reset: counter-name;
+}
+
+.section {
+  position: relative;
+  counter-increment: section-counter;
+}
+
+.counters ol {
+  list-style: none;
+}
+
+/*# sourceMappingURL=main.css.map */
