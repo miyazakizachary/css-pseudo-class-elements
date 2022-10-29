@@ -39,12 +39,26 @@ body {
     font-size: 5rem;
   }
   
-  
+  .intro::before {
+    content: url(//unsplash.it/100/100)
+  }
+
   blockquote {
     font-size: 2rem;
     color: $clr-black;
   }  
 
+  blockquote::before {
+    content: open-quote;
+    font-size: 2em;
+    color: rgb(113, 65, 65);
+  }
+
+  blockquote::after {
+    content: close-quote;
+    font-size: 2em;
+    color: rgb(113, 65, 65);
+  }
 
   a[data-tool-tip] {
     position: relative;
@@ -52,6 +66,24 @@ body {
 
   .decorations {
     padding: 7em;
+  }
+
+  a[data-tool-tip] {
+    position: relative;
+  }
+
+  a[data-tool-tip]::after {
+    content: attr(data-tool-tip);
+    display: block;
+    position: absolute;
+    background-color: rgb(130, 51, 33);
+    padding: 1em 3em;
+    color: #fff;
+    border-radius: 8px;
+    font-size: .85em;
+    bottom: 50%;
+    left: 0;
+    white-space: nowrap;
   }
   
   .counters {
