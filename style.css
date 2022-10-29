@@ -1,0 +1,30 @@
+*, *::before, *::after { box-sizing: border-box;}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+p::before {
+    display: block;
+    content:attr(data-before);
+    background: red;
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+  }
+
+p::after {
+    display: block;
+    content:attr(data-after);
+    background: red;
+    font-size: 50px;
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+}
