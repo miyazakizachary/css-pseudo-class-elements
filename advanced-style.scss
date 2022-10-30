@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Unica+One|Vollkorn');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css');
 
 $ff-ss: 'Unica One';
 $ff-s: 'Vollkorn';
@@ -6,6 +7,10 @@ $ff-s: 'Vollkorn';
 $clr-red: #c31;
 $clr-black: rgba(black, 1);
 $clr-gray: rgba(black, .7);
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
 
 body {
     font-size: 1rem;
@@ -77,15 +82,46 @@ body {
     display: block;
     position: absolute;
     background-color: rgb(130, 51, 33);
-    padding: 1em 3em;
+    padding: 1em 1em;
     color: #fff;
     border-radius: 8px;
     font-size: .85em;
-    bottom: 50%;
+    bottom: 0;
     left: 0;
     white-space: nowrap;
+    transform: scale(0);
+    transition: transform ease-out 150ms, bottom ease-out 150ms;
   }
   
+  a[data-tool-tip]:hover::after {
+    transform: scale(1);
+    bottom: 100%;
+  }
+
+  a[href$=".pdf"]::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f1c1';
+  }
+
+  a[href^="http"]::after {
+    font-family: 'Font Awesome 5 Free';
+    content: '\f35d';
+    font-weight: 900;
+    font-size: .8em;
+  }
+
+  .decorations {
+    padding: 7em;
+  }
+
+  .section-with-deco::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f0e7';
+    display: block;
+    margin-bottom: 5px;
+  }
+
   .counters {
     background: lightgray;
     text-align: left;
@@ -94,11 +130,28 @@ body {
     
     counter-reset: counter-name;
   }
+
   
   .section { 
     position: relative;
-    counter-increment: section-counter;
   }
+
+  .section::before {
+    counter-increment: counter-name;
+    content: counter(counter-name);
+    position: absolute;
+    left: -2.5em;
+    top: -.5em;
+    background-color: rgb(105, 23, 4);
+    padding: .5em;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+  
   
   .counters ol {
     list-style: none;
